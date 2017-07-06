@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<title>Мінігра</title>
+	
+	<meta name="author" content="Oleksa Vyshnivsky">
+	<!-- <meta name="keywords" content=""> -->
+	<meta name="description" content="Випадкова беззмістовна іграшка із сумнівними перспективами">
+	<!-- <meta name="robots" content=""> -->
+
+	<link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
+
+	<link href="/vendor/jquery-ui/jquery-ui.css" type="text/css" rel="stylesheet">
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="assets/css/styles-layout.css" type="text/css" rel="stylesheet">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Мінігра">
+	<meta property="og:description" content="Випадкова беззмістовна іграшка із сумнівними перспективами.">
+	<meta property="og:image" content="http://tymchasove.tk/jsgame/assets/img/mf-image.jpg">
+</head>
+
+<body>
+<noscript>
+	<div>
+		<p><strong>Проблема</strong></p>
+		<p>Цій сторінці потрібен увімкнений JavaScript. Ось <a href="http://www.enable-javascript.com/" target="_blank">інструкція з увімкнення</a>.</p>
+	</div>
+</noscript>
+
+<!-- Головний блок -->
+<div class="m-2">
+	<div hidden="">
+		<div class="m-2 d-flex">
+			<button id="localstorage-save" class="btn btn-secondary m-2">Зберегти ігрові дані у локальне сховище</button>
+			<button id="localstorage-load" class="btn btn-secondary m-2">Завантажити ігрові дані з локального сховища</button>
+		</div>
+	</div>
+	<div class="m-2 d-flex">
+		<button id="simulation-start" class="btn btn-primary m-2">Нове моделювання</button>
+		<button id="simulation-runstep" class="btn btn-secondary m-2">Наступний крок</button>
+		<button id="simulation-autorun" class="btn btn-secondary m-2">Автовиконання</button>
+		<button id="simulation-stopautorun" class="btn btn-secondary m-2">Зупинити автовиконання</button>
+		<button id="simulation-finish" class="btn btn-primary m-2">Завершити моделювання</button>
+	</div>
+	<!-- Налаштування -->
+	<div class="m-2 form-inline">
+		<div class="form-group">
+			<label for="taxrate" class="px-2">Відсоток доходу племені, що йде на податок</label>
+			<input type="number" id="taxrate" value="0.1" class="form-control text-center" style="width: auto;" min="0" max="1" step="0.01">
+		</div>
+		<div class="form-group">
+			<label class="px-2">Поточний сезон: <span id="curSeason"></span></label>
+		</div>
+	</div>
+	<div class="m-2">
+		<div id="chart"></div>
+	</div>
+	<div class="m-2">
+		<div class="table-responsive">
+			<table class="table table-sm table-fixed">
+				<thead>
+					<tr>
+						<th></th>
+						<th class="text-right">&sum; Населення</th>
+						<th class="text-right">Держ. скарбниця</th>
+						<th class="text-right">&sum; Останній податок</th>
+						<th class="text-right">&sum; Остання дотація</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="state">
+						<td>Держава</td>
+						<td class="text-right population"></td>
+						<td class="text-right treasury"></td>
+						<td class="text-right lastTax"></td>
+						<td class="text-right lastDotation"></td>
+					</tr>
+				</tbody>
+			</table>
+			<table id="table-tribes" class="table table-sm table-fixed">
+				<thead>
+					<tr>
+						<th>Плем’я</th>
+						<th class="text-right">Населення</th>
+						<th class="text-right">Скарбниця</th>
+						<th class="text-right">Останній податок</th>
+						<th class="text-right">Остання дотація</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- Підвал -->
+<footer class="footer">
+	<div class="container">
+		ODE, 2017
+	</div>
+</footer>
+
+<div id="scroll-top" title="Нагору" style="display: none;" class="text-center">
+	<i class="fa fa-chevron-up" aria-hidden="true"></i>
+</div>
+
+<!-- Інші файли стилів -->
+<link href="/vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="/vendor/icofont/css/icofont.css" type="text/css" rel="stylesheet">
+<link href="/vendor/misc/css/animate.css" type="text/css" rel="stylesheet">
+<link href="/vendor/misc/css/hover-min.css" type="text/css" rel="stylesheet">
+<link href="/vendor/c3/c3.min.css" type="text/css" rel="stylesheet">
+
+<!-- JS -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/tether/js/tether.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/d3/d3.v3.min.js" charset="utf-8"></script>
+<script src="/vendor/c3/c3.min.js"></script>
+
+<script src="assets/js/controls.js"></script>
+<script src="assets/js/game.js"></script>
+
+</body>
+</html>

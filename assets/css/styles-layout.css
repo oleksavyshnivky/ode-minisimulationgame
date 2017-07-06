@@ -1,0 +1,32 @@
+/* ———————————————————————————————————————————————————————————————————————————————— */
+/* РОЗМІТКА СТОРІНКИ */
+
+
+.table-fixed {
+	table-layout: fixed;
+}
+/* ———————————————————————————————————————————————————————————————————————————————— */
+
+/* Випливне посилання "Нагору" */
+#scroll-top {
+	vertical-align: middle;
+	font-size: 1.3rem;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 40px;
+	height:40px;
+	padding-top: 0px;
+	color: white;
+	background-color: black;
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid silver;
+	z-index: 2000;
+}
+#scroll-top:hover {
+	color: orange;
+	transform: translate(0px,-5px);
+	-webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
